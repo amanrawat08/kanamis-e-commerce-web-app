@@ -1,0 +1,219 @@
+.upperHeader .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.upperHeader{
+    border-bottom: 1px solid #f5efef;
+}
+
+.logo {
+  width: 150px;
+}
+
+.search-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px;
+  font-family: 'DM Sans', sans-serif;
+  background: #f8f9fb;
+}
+
+.label {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9ca3af;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+/* ── Variant 4: Boxed with shadow ── */
+.search-v4 {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  min-width: 560px;
+  padding: 0 16px;
+  gap: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  transition:
+    box-shadow 0.2s,
+    border-color 0.2s;
+}
+.search-v4:focus-within {
+  box-shadow: 0 0 0 3px rgb(155 43 43 / 13%);
+  border-color: var(--primary);
+}
+.search-v4 i.left {
+  font-size: 17px;
+  color: #9ca3af;
+}
+.search-v4 input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  color: #111;
+  background: transparent;
+  padding: 13px 0;
+}
+.search-v4 input::placeholder {
+  color: #9ca3af;
+}
+.search-v4 .divider {
+  width: 1px;
+  height: 20px;
+  background: #e5e7eb;
+}
+.search-v4 .mic-btn {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  transition: color 0.15s;
+}
+.search-v4 .mic-btn:hover {
+  color: #111;
+}
+.search-v4 .cam-btn {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  transition: color 0.15s;
+}
+.search-v4 .cam-btn:hover {
+  color: var(--primary);
+}
+.search-v4 .go-btn {
+  background: var(--primary);
+  border: none;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  padding: 7px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.search-v4 .go-btn:hover {
+  background: #111;
+}
+
+/* ── Shared action group ── */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ════════════════════════════
+       VARIANT 1 — Clean minimal
+    ════════════════════════════ */
+.v1 {
+  background: #fff; 
+  border-radius: 16px; 
+  display: inline-flex;
+}
+
+.v1 .action-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #374151;
+  font-size: 17px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.v1 .action-btn:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+  color: #111;
+}
+
+.v1 .badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 18px;
+  height: 18px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  padding: 0 4px;
+}
+
+.v1 .login-btn, .seller-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 18px;
+  height: 42px;
+  border-radius: 12px;
+  border: none; 
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: background 0.15s;
+  margin-left: 4px;
+  text-decoration: none;
+}
+.login-btn{
+  background: var(--primary);
+}
+
+.v1 .login-btn:hover {
+  background:#111;
+}
+
+.go-btn mat-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cateory-list{
+  display: flex;
+  align-self: center;
+  justify-content: start;
+  gap: 20px;
+  list-style: none;
+  padding: 0px;
+  margin: 0;
+}
+
+.cateory-list li{
+  padding: 10px 5px;
+  cursor: pointer;
+}
+
+.cateory-list li a{
+  color: white;
+  text-decoration: none;
+}

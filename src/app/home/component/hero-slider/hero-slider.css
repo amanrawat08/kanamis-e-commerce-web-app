@@ -1,0 +1,19 @@
+swiper-container {
+  width: 100%;
+  height: 600px;
+}
+
+swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-slider-outer{
+    position: relative;
+}
+.hero-slider-outer div{
+    position: absolute;
+    top: 40%;
+    font-family: 'Onest', sans-serif;
+}

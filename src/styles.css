@@ -1,1 +1,63 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+:root {
+  --primary: rgb(42, 85, 229);
+}
+.container {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.bg-color-main {
+  background-color: var(--primary);
+  color: white;
+}
+p {
+  padding: 0px 10px;
+  margin: 0;
+}
+
+.main-btn,
+.secondary-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 18px;
+  height: 42px;
+  border-radius: 2px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  color: #fff;
+  background: var(--primary);
+  font-size: 13px;
+  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: background 0.15s;
+  margin-left: 4px;
+  font-size: 16px;
+}
+
+.secondary-btn {
+  background-color: black;
+}
+
+.main-btn:hover{
+   background-color: black;
+}
+
+button {
+  border: none;
+}
