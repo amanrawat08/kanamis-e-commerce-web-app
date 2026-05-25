@@ -1,0 +1,13 @@
+.auth-flip-link a{
+    color:var(--primary);
+    cursor: pointer;
+}
+
+.auth-flip-link a:hover{
+    text-decoration: underline;
+}
+
+.auth-flip-link{
+    margin-top: 10px;
+    font-size: 15px;
+}

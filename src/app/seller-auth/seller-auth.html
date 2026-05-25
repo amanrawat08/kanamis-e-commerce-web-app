@@ -1,11 +1,67 @@
-<div class="seller-auth container d-flex justify-content-center items-center">
-  <div class="signup">
-    <h2 class="heading">Seller Sign Up</h2>
-    <form #sellerSignUp = "ngForm" (ngSubmit)="signUp(sellerSignUp.value)"  class="comman-form">
-      <input type="text" class="form-input" ngModel name="Name" id="Name" placeholder="Enter Name" />
-      <input type="email" class="form-input" ngModel name="email" id="email" placeholder="Enter email" />
-      <input type="Password" class="form-input" ngModel name="Password" id="Password" placeholder="Enter Password" />
-      <button class="form-button">Sign up</button>
-    </form>
-  </div>
+<div>
+  @if(toogleLogin){
+    <!--Sign up-->
+    <div class="seller-auth container d-flex justify-content-center items-center">
+      <div class="signup">
+        <h2 class="heading">Seller Sign Up</h2>
+        <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)" class="comman-form">
+          <input
+            type="text"
+            class="form-input"
+            ngModel
+            name="name"
+            id="name"
+            placeholder="Enter Name"
+          />
+          <input
+            type="email"
+            class="form-input"
+            ngModel
+            name="email"
+            id="email"
+            placeholder="Enter email"
+          />
+          <input
+            type="Password"
+            class="form-input"
+            ngModel
+            name="password"
+            id="password"
+            placeholder="Enter Password"
+          />
+          <button class="form-button">Sign up</button>
+        </form>
+        <div class="auth-flip-link  ">Already Have an account, <a (click)="toggleLoginfunc()" >Login now</a></div>
+      </div>
+    </div>
+  }@else {
+    <!--Seller login -->
+  
+    <div class="seller-auth container d-flex justify-content-center items-center">
+      <div class="signup">
+        <h2 class="heading">Seller Login Up</h2>
+        <form #sellerLogin="ngForm" (ngSubmit)="login(sellerLogin.value)" class="comman-form">
+          <input
+            type="email"
+            class="form-input"
+            ngModel
+            name="email"
+            id="email"
+            placeholder="Enter email"
+          />
+          <input
+            type="Password"
+            class="form-input"
+            ngModel
+            name="password"
+            id="password"
+            placeholder="Enter Password"
+          />
+          <button class="form-button">Login up</button>
+        </form>
+        <div class="auth-flip-link">Don't Have an account, <a (click)="toggleLoginfunc()" >Sign Up now</a></div>
+      </div>
+    </div>
+  }
+
 </div>
