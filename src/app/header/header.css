@@ -4,8 +4,8 @@
   justify-content: space-between;
 }
 
-.upperHeader{
-    border-bottom: 1px solid #f5efef;
+.upperHeader {
+  border-bottom: 1px solid #f5efef;
 }
 
 .logo {
@@ -123,8 +123,8 @@
        VARIANT 1 — Clean minimal
     ════════════════════════════ */
 .v1 {
-  background: #fff; 
-  border-radius: 16px; 
+  background: #fff;
+  border-radius: 16px;
   display: inline-flex;
 }
 
@@ -167,14 +167,15 @@
   padding: 0 4px;
 }
 
-.v1 .login-btn, .seller-btn {
+.v1 .login-btn,
+.seller-btn {
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 0 18px;
   height: 42px;
   border-radius: 12px;
-  border: none; 
+  border: none;
   color: #fff;
   font-size: 13px;
   font-weight: 500;
@@ -184,21 +185,21 @@
   margin-left: 4px;
   text-decoration: none;
 }
-.login-btn{
+.login-btn {
   background: var(--primary);
 }
 
 .v1 .login-btn:hover {
-  background:#111;
+  background: #111;
 }
 
-.go-btn mat-icon{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.go-btn mat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.cateory-list{
+.cateory-list {
   display: flex;
   align-self: center;
   justify-content: start;
@@ -208,12 +209,28 @@
   margin: 0;
 }
 
-.cateory-list li{
+.cateory-list li {
   padding: 10px 5px;
   cursor: pointer;
 }
 
-.cateory-list li a{
+.cateory-list li a {
   color: white;
+  text-decoration: none;
+}
+
+.seller-options {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.seller-options li a{ 
+  cursor: pointer;
+
+  color: black;
   text-decoration: none;
 }

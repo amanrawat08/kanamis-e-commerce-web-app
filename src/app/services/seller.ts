@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { SellerInterface } from '../core/seller-interface';
+import { EventEmitter, Injectable } from '@angular/core';
+import { SellerInterface, sellerLogin } from '../core/seller-interface';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
@@ -10,6 +10,7 @@ import { BehaviorSubject } from 'rxjs';
 export class Seller {
   // isSellerLogin: boolean = false;
   isSellerLogin = new BehaviorSubject<boolean>(false);
+  isLoginError = new BehaviorSubject<boolean>(false);
 
   constructor(
     private http: HttpClient,
@@ -33,29 +34,31 @@ export class Seller {
 
   reloadSeller() {
     if (localStorage.getItem('seller')) {
-      console.log('dfdf');
-
       this.isSellerLogin.next(true);
       this.router.navigate(['sellerHome']);
     }
   }
 
-  sellerLogin(data: SellerInterface) {
+  sellerLogin(data: sellerLogin) {
     if (!data.email || !data.password) {
-      alert('Fill all Requied Fields');
+      this.isLoginError.next(true);
+      return
     }
 
-    this.http.get<SellerInterface[]>('http://localhost:3000/seller').subscribe((res) => {
-      const seller = res.find((t) => data.email === t.email);
+    this.http.get<sellerLogin[]>('http://localhost:3000/seller').subscribe((res) => {
+      const seller = res.find((t) => data.email === t.email && data.password === t.password);
+      
       if (!seller) {
-        alert('seller not found');
+        console.log('Login failed');
+        this.isLoginError.next(true); 
         return;
       }
+      this.isLoginError.next(false) 
+      
 
       localStorage.setItem('seller', JSON.stringify(seller));
 
-      this.router.navigate(['sellerHome'])
-
+      this.router.navigate(['sellerHome']);
     });
   }
 }

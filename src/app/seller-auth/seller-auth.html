@@ -53,12 +53,13 @@
             type="Password"
             class="form-input"
             ngModel
-            name="password"
+            name  ="password"
             id="password"
             placeholder="Enter Password"
           />
-          <button class="form-button">Login up</button>
+          <button type="submit" class="form-button">Login up</button>
         </form>
+        <p class="text-red">{{loginErrorText}}</p>
         <div class="auth-flip-link">Don't Have an account, <a (click)="toggleLoginfunc()" >Sign Up now</a></div>
       </div>
     </div>

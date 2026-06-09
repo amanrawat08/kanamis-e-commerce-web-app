@@ -1,32 +1,55 @@
-import { Component } from '@angular/core';
-import {FormsModule} from '@angular/forms'
+import { Component, Injectable } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { Seller } from '../services/seller';
-import { SellerInterface } from '../core/seller-interface';
-import {Router} from '@angular/router';
+import { SellerInterface, sellerLogin } from '../core/seller-interface';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-seller-auth',
   imports: [FormsModule],
   templateUrl: './seller-auth.html',
   styleUrl: './seller-auth.css',
 })
-export class SellerAuth { 
 
-  toogleLogin:boolean = false;
+@Injectable({
+  providedIn:'root'
+})
 
-  constructor(private sellerService: Seller, private router: Router) { }
+export class SellerAuth {
+  toogleLogin: boolean = false;
+  loginErrorText: string = '';
 
-  ngOnInit(){
+  constructor(
+    private sellerService: Seller,
+    private router: Router,
+  ) {}
+
+  ngOnInit() {
     this.sellerService.reloadSeller();
+    this.sellerService.isLoginError.subscribe((err) => {
+      console.log('Received:', err);
+
+      if (err) {
+        console.log('Running');
+        this.loginErrorText = 'Email or password is Wrong';
+      }
+    });
   }
-  signUp(data:SellerInterface):void{  
+  signUp(data: SellerInterface): void {
     this.sellerService.sellerSignUp(data);
   }
-  login(data:SellerInterface){
-    this.sellerService.sellerLogin(data)
+  login(data: sellerLogin) {
+    console.log("login cclick");
     
+    this.sellerService.sellerLogin(data);
   }
 
-  toggleLoginfunc(){
+  toggleLoginfunc() {
     this.toogleLogin = !this.toogleLogin;
+  }
+
+  logOut(){
+    console.log("swe");
+    
+    localStorage.removeItem("seller");
   }
 }

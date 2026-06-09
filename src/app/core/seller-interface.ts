@@ -4,3 +4,8 @@ export interface SellerInterface {
     email: string;
     password: string;
 }
+
+export interface sellerLogin{
+    email:string,
+    password:string
+}
