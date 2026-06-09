@@ -1,0 +1,38 @@
+<div class="sidebar" [class.collapsed]="isCollapsed()">
+  <div class="sidebar-header">
+    @if (!isCollapsed()) {
+      <h2>Seller Panel</h2>
+    }
+
+    <button class="toggle-btn" (click)="toggleSidebar()">
+      <i class="bi bi-list"></i>
+    </button>
+  </div>
+
+  <ul class="menu">
+    @for (item of menuItems; track item.route) {
+      <li>
+        <a
+          [routerLink]="item.route"
+          routerLinkActive="active"
+        >
+          <i class="bi {{ item.icon }}"></i>
+
+          @if (!isCollapsed()) {
+            <span>{{ item.label }}</span>
+          }
+        </a>
+      </li>
+    }
+
+    <li (click)="handleLogout()">
+      <a >
+        <i class="bi bi-box-arrow-right"></i>
+
+        @if (!isCollapsed()) {
+          <span>Logout</span>
+        }
+      </a>
+    </li>
+  </ul>
+</div>

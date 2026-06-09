@@ -1,0 +1,73 @@
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background: #111827;
+  color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: 0.3s ease;
+  overflow: hidden;
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 16px;
+  border-bottom: 1px solid #374151;
+}
+
+.sidebar-header h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.toggle-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.menu {
+  list-style: none;
+  padding: 16px;
+  margin: 0;
+}
+
+.menu li {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.menu a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border-radius: 10px;
+  color: #d1d5db;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  background: #1f2937;
+  color: white;
+}
+
+.menu a.active {
+  background: #2563eb;
+  color: white;
+}
+
+.menu i {
+  font-size: 20px;
+  min-width: 24px;
+}

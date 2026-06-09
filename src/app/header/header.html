@@ -1,64 +1,67 @@
-<div class="upperHeader py-3">
-  <div class="container">
-    <div class="social d-flex" routerLink="/">
-      <img src="logo.webp" class="logo" alt="" />
-    </div>
-
-    @if(menuType==="default"){
-      <div>
-        <div class="search-v4">
-          <i class="fas fa-search left"></i>
-          <input type="text" placeholder="Search for products, brands and more..." />
-          <div class="divider"></div>
-          <button class="mic-btn" title="Voice search"><i class="fas fa-microphone"></i></button>
-          <button class="cam-btn" title="Image search"><i class="fas fa-camera"></i></button>
-          <button class="go-btn"><mat-icon>search</mat-icon></button>
-        </div>
+@if(menuType!=="seller"){
+  <div class="upperHeader py-3">
+    <div class="container">
+      <div class="social d-flex" routerLink="/">
+        <img src="logo.webp" class="logo" alt="" />
       </div>
-    }
-    <div>
-      @switch (menuType) {
-        @case ('default') {
-          <div class="v1">
-            <div class="nav-actions">
-              
-              <button class="action-btn" title="Wishlist">
-                <mat-icon>shopping_cart</mat-icon>
-                <span class="badge">0</span>
-              </button>
-              <button class="action-btn" title="Cart">
-                <mat-icon>favorite_border</mat-icon>
-                <span class="badge">0</span>
-              </button>
-              <button class="login-btn main-btn"><mat-icon>person_outline</mat-icon> Login</button>
-              <button class="">
-                <a routerLink="seller-auth" class="seller-btn secondary-btn">
-                  <mat-icon>person_outline</mat-icon> Seller
-                </a>
-              </button>
-            </div>
+  
+      @if(menuType==="default"){
+        <div>
+          <div class="search-v4">
+            <i class="fas fa-search left"></i>
+            <input type="text" placeholder="Search for products, brands and more..." />
+            <div class="divider"></div>
+            <button class="mic-btn" title="Voice search"><i class="fas fa-microphone"></i></button>
+            <button class="cam-btn" title="Image search"><i class="fas fa-camera"></i></button>
+            <button class="go-btn"><mat-icon>search</mat-icon></button>
           </div>
-        }
-        @case ('seller') {
-          <ul class="seller-options">
-            <li>
-                <a routerLink="/seller-auth">Seller</a>
-              </li>
-            <li>
-                <a routerLink="/sellerHome">Home</a>
-              </li>
-            <li>
-                <a (click)="handleLogout()">Logout</a>
-              </li>
-            <li>
-                <a routerLink="/">Seller Name</a>
-              </li>
-          </ul>
-        }
+        </div>
       }
+      <div>
+        @switch (menuType) {
+          @case ('default') {
+            <div class="v1">
+              <div class="nav-actions">
+                
+                <button class="action-btn" title="Wishlist">
+                  <mat-icon>shopping_cart</mat-icon>
+                  <span class="badge">0</span>
+                </button>
+                <button class="action-btn" title="Cart">
+                  <mat-icon>favorite_border</mat-icon>
+                  <span class="badge">0</span>
+                </button>
+                <button class="login-btn main-btn"><mat-icon>person_outline</mat-icon> Login</button>
+                <button class="">
+                  <a routerLink="seller-auth" class="seller-btn secondary-btn">
+                    <mat-icon>person_outline</mat-icon> Seller
+                  </a>
+                </button>
+              </div>
+            </div>
+          }
+          @case ('seller') {
+            <ul class="seller-options d-none">
+              <li>
+                  <a routerLink="/seller-auth">Seller</a>
+                </li>
+              <li>
+                  <a routerLink="/sellerHome">Home</a>
+                </li>
+              <li>
+                  <a (click)="handleLogout()">Logout</a>
+                </li>
+              <li>
+                  <a routerLink="/">{{(sellerName || " ").split(' ')[0] | titlecase}}</a>
+                </li>
+            </ul>
+          }
+        }
+      </div>
     </div>
   </div>
-</div>
+
+}
 
 @if (menuType === 'default') {
   <div class="header bg-color-main">
