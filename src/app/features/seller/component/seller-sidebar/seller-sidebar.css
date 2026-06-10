@@ -3,7 +3,7 @@
   height: 100vh;
   background: #111827;
   color: white;
-  position: fixed;
+  /*position: fixed;*/
   left: 0;
   top: 0;
   transition: 0.3s ease;

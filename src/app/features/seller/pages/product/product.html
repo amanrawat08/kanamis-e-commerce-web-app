@@ -1,0 +1,60 @@
+<div class="d-flex">
+  <app-seller-sidebar />
+  <section class="prod-info-outer">
+    <h3>Products</h3>
+    <!-- Search & Actions Bar -->
+    <div class="toolbar">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="Search by products"  />
+      </div>
+      <button class="btn-add">Add Product</button>
+      <button class="btn-export">Export</button>
+    </div>
+
+    <!-- Products Table -->
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Product ID</th>
+            <th>Product name</th>
+            <th>Category <span class="sort-icon">⌄</span></th>
+            <th>Status <span class="sort-icon">⌄</span></th>
+            <th>Price</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (product of products; track product.id) {
+            <tr>
+              <td>#{{ product.id }}</td>
+              <td class="product-name-cell">
+                <img   class="product-img" />
+                {{ product.name }}
+              </td>
+              <td>{{ product.category }}</td>
+              <td>
+                @if (product.status === 'In stock') {
+                  <span class="badge-instock">In stock</span>
+                } @else {
+                  <span class="badge-outstock">Out of stock</span>
+                }
+              </td>
+              <td>$12</td>
+              <td class="actions">
+                <button class="btn-icon" title="View">👁️</button>
+                <button class="btn-icon" title="Delete">🗑️</button>
+              </td>
+            </tr>
+
+          } @empty {
+            <tr>
+              <td colspan="6" class="empty-state">No products found.</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>

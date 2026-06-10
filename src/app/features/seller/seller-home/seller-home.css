@@ -8,3 +8,9 @@
     margin-left: 80px;
   }
 }
+
+.product-outer{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}

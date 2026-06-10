@@ -16,7 +16,7 @@ export const routes: Routes = [
     },
     {
         path:"sellerHome",
-        component:SellerHome,
-        canActivate: [sellerAuthGuard]
-    }
+        canActivate: [sellerAuthGuard],
+        loadChildren: ()=> import('./features/seller/seller.routes').then(m=>m.sellerRoutes)
+    }, 
 ];

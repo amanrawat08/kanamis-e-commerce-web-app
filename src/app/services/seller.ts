@@ -61,4 +61,10 @@ export class Seller {
       this.router.navigate(['sellerHome']);
     });
   }
+
+  //product 
+    getProduct(){
+      return this.http.get<any>('http://localhost:3000/products')
+    }
+
 }

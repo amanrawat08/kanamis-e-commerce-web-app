@@ -14,12 +14,12 @@ export class SellerSidebar {
     {
       label: 'Dashboard',
       icon: 'bi-grid',
-      route: '/seller/dashboard',
+      route: '/sellerHome',
     },
     {
       label: 'Products',
       icon: 'bi-box-seam',
-      route: '/seller/products',
+      route: '/sellerHome/products',
     },
     {
       label: 'Add Product',
@@ -50,7 +50,7 @@ export class SellerSidebar {
   }
 
   toggleSidebar() {
-    this.isCollapsed.update(value => !value);
+   // this.isCollapsed.update(value => !value);
   }
   handleLogout(){
     if(confirm("Are you want to logout")){

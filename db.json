@@ -12,5 +12,87 @@
       "email": "iamaman8745@gmail.com",
       "password": "aman123"
     }
+  ],
+  "products": [
+    {
+      "id": "345189756",
+      "name": "Teeth Comb Headband",
+      "category": "Accessories",
+      "status": "In stock",
+      "price": 6.00,
+      "sellerId": "bb63"
+    },
+    {
+      "id": "345189755",
+      "name": "Large Weekender Bag Black",
+      "category": "Handbags & Purses",
+      "status": "Out of stock",
+      "price": 150.00,
+      "sellerId": "bb63"
+    },
+    {
+      "id": "345189754",
+      "name": "Combination Print T-Shirt",
+      "category": "Men's Clothes",
+      "status": "In stock",
+      "price": 40.00,
+      "sellerId": "bb63"
+    },
+    {
+      "id": "345189753",
+      "name": "Solid Heart Pendant Necklace",
+      "category": "Jewellery",
+      "status": "In stock",
+      "price": 31.00,
+      "sellerId": "bb63"
+    },
+    {
+      "id": "345189752",
+      "name": "Leather Shoulder Bag Blue",
+      "category": "Handbags & Purses",
+      "status": "Out of stock",
+      "price": 78.00,
+      "sellerId": "bb63"
+    },
+    {
+      "id": "345189751",
+      "name": "ROXY Kiss From Arose Dress",
+      "category": "Women's Clothes",
+      "status": "Out of stock",
+      "price": 104.00,
+      "sellerId": "fb51"
+    },
+    {
+      "id": "345189750",
+      "name": "Tout Bag Beige Mini",
+      "category": "Handbags & Purses",
+      "status": "In stock",
+      "price": 54.00,
+      "sellerId": "fb51"
+    },
+    {
+      "id": "345189749",
+      "name": "Under Armour Surge 3 Black",
+      "category": "Men's Shoes",
+      "status": "In stock",
+      "price": 89.00,
+      "sellerId": "fb51"
+    },
+    {
+      "id": "345189748",
+      "name": "Leather Shoulder Bag",
+      "category": "Handbags & Purses",
+      "status": "In stock",
+      "price": 230.00,
+      "sellerId": "fb51"
+    },
+    {
+      "id": "345189747",
+      "name": "Yull Scarborough Blue Lagoon Sandals",
+      "category": "Women's Shoes",
+      "status": "Out of stock",
+      "price": 129.00,
+      "sellerId": "fb51"
+    }
   ]
 }
